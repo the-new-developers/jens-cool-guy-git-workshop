@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jen's Cool Guy Git Workshop</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- This script tag injects VueJS (or just "Vue") into this application. https://vuejs.org/v2/guide/ -->
+    <script src="https://unpkg.com/vue"></script>
+    <!-- This is a CSS library called TailwindCSS. https://tailwindcss.com/ -->
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <!-- These are Google Font script tags that allow us to use Google Fonts without installing them
+    or bundling them with our webpage. -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* This adds a corkboard image to the background of the main page. */
+      body {
+        background-image: url("assets/corkboard.jpg");
+        background-repeat: repeat;
+      }
+      /* Here is where we add the Google Font to the title tag. */
+      #bulletin-title {
+        font-family: "Love Ya Like A Sister", cursive;
+      }
+      /* These are specifically-named CSS classes that Vue recognizes to add smooth
+      animations to items that enter and leave the screen. You'll notice that we don't manually
+      apply these classes anywhere; it's done automatically by Vue. */
+      .fade-enter-active,
+      .fade-leave-active {
+        transition: opacity 0.5s;
+      }
+      .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <!-- Most of the CSS classes you see here are from TailwindCSS. -->
+  <body class="h-screen">
+    <div id="app" class="container mx-auto w-5/6 h-full">
+      <div
+        id="bulletin-title"
+        class="w-full h-16 text-center flex justify-between content-center items-center text-4xl"
+      >
+        <span>📌</span>
+        <span class="text-white font-bold">Bulletin Board</span>
+        <span>📌</span>
+      </div>
+      <div
+        class="w-full h-5/6 border-8 border-rounded border-yellow-900 p-2 bg-white"
+      >
+        <transition name="fade">
+          <!-- Your HTML content will show up inside this iframe automatically thanks to our Vue code. -->
+          <iframe
+            id="cool-guy-content"
+            v-bind:src="customPagePath"
+            v-if="show"
+            class="w-full h-full"
+          ></iframe>
+        </transition>
+      </div>
+    </div>
+
+    <script>
+      // This is the beginning of our Vue code. You don't need to modify anything inside here.
+      var app = new Vue({
+        el: "#app",
+        data: {
+          show: true,
+          carouselCounter: 0,
+          // As we add more pages, they will show up here.
+          customPagePaths: [
+            "pages/jen.html",
+            "pages/template.html"
+          ],
+        },
+        computed: {
+          customPagePath: function () {
+            return this.customPagePaths[this.carouselCounter];
+          },
+        },
+        methods: {
+          updateContent: function () {
+            this.show = false;
+            setTimeout(() => {
+              // This is the function that slowly rotates through all our HTML files.
+              // If it hits the end, it starts back over at the beginning.
+              if (this.carouselCounter + 1 == this.customPagePaths.length) {
+                this.carouselCounter = 0;
+              } else {
+                this.carouselCounter++;
+              }
+            }, 500);
+            setTimeout(() => (this.show = true), 500);
+          },
+        },
+        created: function () {
+          setInterval(this.updateContent, 4000);
+        },
+      });
+    </script>
+  </body>
+</html>
