@@ -46,17 +46,17 @@ Some next steps that aren't covered in this tutorial:
 
 **commit** - A single point in history. Can be looked at like a save point. Commits allow you to observe changes to the code over time, and have messages associated with them that list the changes that were made.
 
-**git **- A source control system for groups of programmers to collaborate on code, and for individuals to create non-destructive, tracked changes to code over time.
+**git** - A source control system for groups of programmers to collaborate on code, and for individuals to create non-destructive, tracked changes to code over time.
 
-**merge **- To combine code changes from one branch into another. Typically you merge a branch with new features or changes into the major branch that is the "source of truth."
+**merge** - To combine code changes from one branch into another. Typically you merge a branch with new features or changes into the major branch that is the "source of truth."
 
-**pull ** - To bring "upstream" or "origin" changes down into your local branch.
+**pull** - To bring "upstream" or "origin" changes down into your local branch.
 
-**push **- To send changes in your local branch "upstream" to the "origin."
+**push** - To send changes in your local branch "upstream" to the "origin."
 
-**repository **- This is normally defined as "a collection of references," but you can think of this simplistically as a whole code project, or a collection of code.
+**repository** - This is normally defined as "a collection of references," but you can think of this simplistically as a whole code project, or a collection of code.
 
-**source control **- Systems that allow for changes in code to be tracked, authored, saved, restored, and combined.
+**source control** - Systems that allow for changes in code to be tracked, authored, saved, restored, and combined.
 
 ## Tutorial
 
