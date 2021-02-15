@@ -67,17 +67,52 @@
     </div>
 
     <script>
+      
+      /** 
+       * Uses the GitHub API to fetch the names of the pages currently on the main branch of the repository.
+       * You can read more about how to use this API here: https://docs.github.com/en/rest
+       * 
+       * WARNING: Because we're not using an authentication token, we're limited to making 60 calls - or fetches - per hour.
+       * @returns the list of paths for each page as an array of strings.
+       */
+      async function fetchPagePathsFromGithub() {
+        var pagePaths = []; 
+
+        // We'll use Javascript's native fetch api to make this request, which will return a 'Response' object.
+        // You can read more about the fetch api here: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+        var response = await fetch('https://api.github.com/repos/the-new-developers/jens-cool-guy-git-workshop/contents/pages');
+
+        // The response object can tell us if our request was successful; here, 'ok' is the same as an HTTP 200 status.
+        if (response.ok) {
+
+          // The response object has a method that allows us to parse it into a JSON object, which will make it easier for us to work
+          // with using Javascript
+          var data = await response.json();
+
+          // We'll iterate over each item in the data array and pull out each item's name property into a new array of strings
+          pagePaths = data.map(datum => 'pages/' + datum.name); 
+          
+        } else {
+
+          // If we're hitting this, it means the response has failed; maybe we hit the limit, maybe something else went wrong.
+          // Either way, we're going to send back a list of pages that we know will be there.
+          pagePaths = [
+            'pages/jen.html',
+            'pages/rodney\'s awesome page.html',
+            'pages/template.html'
+          ]
+        }
+
+        return pagePaths;
+      }
+      
       // This is the beginning of our Vue code. You don't need to modify anything inside here.
       var app = new Vue({
         el: "#app",
         data: {
           show: true,
           carouselCounter: 0,
-          // As we add more pages, they will show up here.
-          customPagePaths: [
-            "pages/rodney's awesome page.html",
-            "pages/jen.html"
-          ],
+          customPagePaths: [],
         },
         computed: {
           customPagePath: function () {
@@ -99,8 +134,9 @@
             setTimeout(() => (this.show = true), 500);
           },
         },
-        created: function () {
+        created: async function () {
           setInterval(this.updateContent, 4000);
+          this.customPagePaths = await fetchPagePathsFromGithub()
         },
       });
     </script>
