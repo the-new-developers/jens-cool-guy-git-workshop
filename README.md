@@ -40,23 +40,25 @@ Some next steps that aren't covered in this tutorial:
 
 ## Terms
 
-**branch** - A branch is a line of development. We create our own branches from certain points in the code's "history" to work off of, with the assumption that eventually they will be brought back into the `master` or`main` branch.
+**branch** - A branch is a line of development. We create our own branches from certain points in the code's "history" to work off of. In most cases they will be brought back into the `master` or`main` branch, but some groups use a `develop` branch to work off of and only merge into `main` when they do a release.
 
-**clone** - A duplicate copy of the current version of the code that you copy to your local computer to edit. Typically you make a branch after you clone.
+**clone** - A duplicate copy of the current version of the code that you copy to your local computer to edit. This comes with "copies" of all of the existing branches, too.
 
-**commit** - A single point in history. Can be looked at like a save point. Commits allow you to observe changes to the code over time, and have messages associated with them that list the changes that were made.
+**commit** - A single point in history. Can be looked at like a save point. Commits allow you to observe changes to the code over time, and have messages associated with them that list the changes that were made (called "commit messages").
 
-**git** - A source control system for groups of programmers to collaborate on code, and for individuals to create non-destructive, tracked changes to code over time.
+**git** - A source control system for groups of programmers to collaborate on code, and for individuals to create non-destructive, tracked changes to code over time. There are lots of source control systems, but Git is one of the most popular.
 
-**merge** - To combine code changes from one branch into another. Typically you merge a branch with new features or changes into the major branch that is the "source of truth."
+**github** - Not to be confused with Git. While Git is a version control system, GitHub is one of many places where you can host repositories on the internet, and it is one of the most well-known. You do not have to use GitHub to use Git. Check out [these alternatives](https://opensource.com/article/18/8/github-alternatives). You can also store repositories just on your own computer or on your local network.
 
-**pull** - To bring "upstream" or "origin" changes down into your local branch.
+**merge** - To combine code changes from one branch into another. Typically you merge a branch with new features or changes back into the branch of origin. In our example, we merge branches created by our participants into the `main` branch of the workshop repository.
 
-**push** - To send changes in your local branch "upstream" to the "origin."
+**pull** - To bring "upstream" or "origin" changes down into your local branch. In this example, we pull from the GitHub workshop repository to our local machines.
 
-**repository** - This is normally defined as "a collection of references," but you can think of this simplistically as a whole code project, or a collection of code.
+**push** - To send changes in your local branch "upstream" to the "origin." In this example, we push from our local machines to the GitHub workshop repository.
 
-**source control** - Systems that allow for changes in code to be tracked, authored, saved, restored, and combined.
+**repository** - You can think of this at a high-level as a whole coding project, or a collection of code. Often called a "repo." Each school assignment could be a repository. A huge web application could be a repository. A bunch of small applications that work together in one big system might each be their own repository.
+
+**source control/version control** - Systems that allow for changes in code to be tracked, authored, saved, restored, and combined. 
 
 ## Tutorial
 
@@ -64,15 +66,15 @@ This will serve as a reference for you while we complete the workshop. If you wi
 
 1. Ensure you've completed all the prerequisites above (installing Git, setting up a GitHub account, etc.)
 2. Open up your GitHub Desktop application or your terminal window.
-3. **Clone** the repository into an empty folder on your computer.
+3. Clone the repository into an empty folder on your computer.
    - `git clone https://github.com/the-new-developers/jens-cool-guy-git-workshop.git`
-4. Open the folder in the code editor of your choice. You are examining the `main` branch.
+4. Open the folder in the code editor of your choice. You are examining the `main` branch. Also take this opportunity to open `index.html` in your browser. This is what we will be adding to.
 5. Before making any changes, create a new branch.
    - `git branch jens-new-cool-guy-branch`
 6. Switch to the branch you just created.
    - `git checkout jens-new-cool-guy-branch`
 7. Create a new HTML file in the `pages/` folder of the repository, give it a unique name, and make whatever changes you like.
-8. Add the files to your upcoming commit (called 'staging').
+8. Add the files to your upcoming commit (this is called 'staging').
    - `git add -A`
 9. Add a message to your commit.
    - `git commit -m "Do a groovy thing"`
