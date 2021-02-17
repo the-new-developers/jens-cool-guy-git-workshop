@@ -32,10 +32,10 @@ By the end of this workshop, you should be able to...
 Some next steps that aren't covered in this tutorial:
 
 - Creating your own repository
-- Pull requests
+- ~~Pull requests~~ Surprise! We're gonna learn pull requests today.
 - Merge conflicts
 - `.gitignore`
-- Forking
+- ~~Forking~~ Surprise! We're gonna learn how to fork today.
 - GitHub Issues & Projects
 
 ## Terms
@@ -65,30 +65,32 @@ Some next steps that aren't covered in this tutorial:
 This will serve as a reference for you while we complete the workshop. If you wish to use a command prompt or terminal window for your all your Git commands, they are outlined as we go along.
 
 1. Ensure you've completed all the prerequisites above (installing Git, setting up a GitHub account, etc.)
-2. Open up your GitHub Desktop application or your terminal window.
-3. Clone the repository into an empty folder on your computer.
+2. Fork the repository onto your own account.
+3. Open up your GitHub Desktop application or your terminal window.
+5. Clone the repository into an empty folder on your computer.
    - `git clone https://github.com/the-new-developers/jens-cool-guy-git-workshop.git`
-4. Open the folder in the code editor of your choice. You are examining the `main` branch. Also take this opportunity to open `index.html` in your browser. This is what we will be adding to.
-5. Before making any changes, create a new branch.
+6. Open the folder in the code editor of your choice. You are examining your very own `main` branch. Also take this opportunity to open `index.html` in your browser. This is what we will be adding to.
+7. If we were working with a local branch, we could create a new branch and switch to it like this:
    - `git branch jens-new-cool-guy-branch`
-6. Switch to the branch you just created.
    - `git checkout jens-new-cool-guy-branch`
-7. Create a new HTML file in the `pages/` folder of the repository, give it a unique name, and make whatever changes you like.
-8. Add the files to your upcoming commit (this is called 'staging').
+**Instead, we're going to edit right in our own personal `main` branch.**
+9. Create a new HTML file in the `pages/` folder of the repository, give it a unique name, and make whatever changes you like.
+10. Add the files to your upcoming commit (this is called 'staging').
    - `git add -A`
-9. Add a message to your commit.
+11. Add a message to your commit.
    - `git commit -m "Do a groovy thing"`
-10. Push your shiny new branch to the repository.
+12. Push your shiny new branch to the repository.
     - `git push -u origin jens-new-cool-guy-branch`
     - The `-u` in this command stands for "upstream," which establishes the initial connection between your local copy and GitHub.
-11. Wait for the showrunner (that's me) to merge your changes. While you wait, why not check out [all the open source projects](https://github.com/explore) you'll be able to contribute to with your new skills?
-12. When the changes are merged, issues are resolved, and commits are finished, switch back to the main branch.
+13. Return to GitHub and your forked repository.
+14. Click the "Pull Request" button.
+15. Add any additional information and press "Create Pull Request."
+16. Wait for the codemeisters to merge your changes. While you wait, why not check out [all the open source projects](https://github.com/explore) you'll be able to contribute to with your new skills?
+17. When the changes are merged, issues are resolved, and commits are finished, watch as we switch back to the main branch.
     - `git checkout main`
-13. Preview all the new changes that were done to the code and its branches since you last checked out the code.
-    - `git fetch`
-14. Pull the changes that exist on GitHub into your local copy of the repository.
+19. We'll pull the changes that exist on GitHub into our local copy of the workshop repository.
     - `git pull`
-15. Open your code editor to look at the new changes.
+20. Open our code editor to look at the new changes.
 
 ## References
 
