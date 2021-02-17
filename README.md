@@ -52,9 +52,9 @@ Some next steps that aren't covered in this tutorial:
 
 **merge** - To combine code changes from one branch into another. Typically you merge a branch with new features or changes back into the branch of origin. In our example, we merge branches created by our participants into the `main` branch of the workshop repository.
 
-**pull** - To bring "upstream" or "origin" changes down into your local branch. In this example, we pull from the GitHub workshop repository to our local machines.
+**pull** - To bring "upstream" or "origin" changes down into your local branch. In this example, we pull from this GitHub workshop repository to our local machines.
 
-**push** - To send changes in your local branch "upstream" to the "origin." In this example, we push from our local machines to the GitHub workshop repository.
+**push** - To send changes in your local branch "upstream" to the "origin." In this example, we push from our local machines to this GitHub workshop repository.
 
 **repository** - You can think of this at a high-level as a whole coding project, or a collection of code. Often called a "repo." Each school assignment could be a repository. A huge web application could be a repository. A bunch of small applications that work together in one big system might each be their own repository.
 
