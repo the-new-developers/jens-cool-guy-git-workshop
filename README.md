@@ -67,12 +67,13 @@ This will serve as a reference for you while we complete the workshop. If you wi
 1. Ensure you've completed all the prerequisites above (installing Git, setting up a GitHub account, etc.)
 2. Fork the repository onto your own account.
 3. Open up your GitHub Desktop application or your terminal window.
-5. Clone the repository into an empty folder on your computer.
-   - `git clone https://github.com/the-new-developers/jens-cool-guy-git-workshop.git`
+5. Clone the repository into an empty folder on your computer (replace `the-new-developers` here with your username, e.g. `jmia` or `rodneybarnes`).
+   - `git clone https://github.com/<the-new-developers>/jens-cool-guy-git-workshop.git`
 6. Open the folder in the code editor of your choice. You are examining your very own `main` branch. Also take this opportunity to open `index.html` in your browser. This is what we will be adding to.
 7. If we were working with a local branch, we could create a new branch and switch to it like this:
    - `git branch jens-new-cool-guy-branch`
    - `git checkout jens-new-cool-guy-branch`
+   - Feel free to call your branch whatever you like, `jens-new-cool-guy-branch` is just a suggestion
 **Instead, we're going to edit right in our own personal `main` branch.**
 9. Create a new HTML file in the `pages/` folder of the repository, give it a unique name, and make whatever changes you like.
 10. Add the files to your upcoming commit (this is called 'staging').
@@ -80,7 +81,7 @@ This will serve as a reference for you while we complete the workshop. If you wi
 11. Add a message to your commit.
    - `git commit -m "Do a groovy thing"`
 12. Push your shiny new branch to the repository.
-    - `git push -u origin jens-new-cool-guy-branch`
+    - `git push -u origin <jens-new-cool-guy-branch>`
     - The `-u` in this command stands for "upstream," which establishes the initial connection between your local copy and GitHub.
 13. Return to GitHub and your forked repository.
 14. Click the "Pull Request" button.
